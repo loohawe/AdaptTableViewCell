@@ -1,4 +1,6 @@
 # AdaptTableViewCell
+![image](https://github.com/Koneey/AdaptTableViewCell/blob/master/introduction/AdatpTableViewCell.gif)
+
 #简介:
 TableViewCell自动适应文本高度
 
