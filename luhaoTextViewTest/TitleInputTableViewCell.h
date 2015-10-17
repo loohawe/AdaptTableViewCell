@@ -1,0 +1,34 @@
+//
+//  TitleInputTableViewCell.h
+//  luhaoTextViewTest
+//
+//  Created by luhao on 15/10/17.
+//  Copyright © 2015年 vxia. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import "LUHTextView.h"
+
+#define kTitleInputCellHeigntMin 44
+
+@class TitleInputTableViewCell;
+@protocol TitleInputTableViewCellDelegate <NSObject>
+- (void)heightWillChangedTitleInputCell:(TitleInputTableViewCell *)cell;
+- (void)heightDidChangedTitleInputCell:(TitleInputTableViewCell *)cell;
+- (void)cellTextDidChange:(TitleInputTableViewCell *)cell;
+@end
+
+@interface TitleInputTableViewCell : UITableViewCell
+
+- (instancetype)initCellAtIndexPath:(NSIndexPath *)indexPath placeHolderTitle:(NSString *)placeHolder text:(NSString *)text;
+
+@property (nonatomic) LUHTextView *textView;
+@property (nonatomic) NSIndexPath *indexPath;
+@property (nonatomic, weak) id<TitleInputTableViewCellDelegate> titleInputCellDelegate;
+
++ (CGFloat)calculateText:(NSString *)string;
+
+//计算高度模板, 要修改字体从这里修改
++ (UITextView *)attributTextView;
+
+@end
