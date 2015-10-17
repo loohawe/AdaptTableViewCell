@@ -66,15 +66,18 @@
     UITextView *textView = [TitleInputTableViewCell attributTextView];
     textView.text = string;
     CGSize size = [textView sizeThatFits:CGSizeMake(textView.frame.size.width, FLT_MAX)];
-    CGFloat cellHeight = size.height+11;
+    CGFloat cellHeight = size.height + 2*kTitleInputCellVerticalPadding;
     return cellHeight >= kTitleInputCellHeigntMin ? cellHeight : kTitleInputCellHeigntMin;
 }
 
 //字体模板, 以此模板计算 cell高度
 + (UITextView *)attributTextView
 {
-    LUHTextView *tmpTextView = [[LUHTextView alloc] initWithFrame:CGRectMake(4, 6, [UIScreen mainScreen].bounds.size.width-8, 33)];
-    tmpTextView.font = [UIFont systemFontOfSize:14];
+    LUHTextView *tmpTextView = [[LUHTextView alloc] initWithFrame:CGRectMake(kTitleInputCellHorizontalPadding,
+                                                                             kTitleInputCellVerticalPadding,
+                                                                             [UIScreen mainScreen].bounds.size.width-2*kTitleInputCellHorizontalPadding,
+                                                                             kTitleInputCellInternalHeigit)];
+    tmpTextView.font = [UIFont systemFontOfSize:14];    //修改字体在这里修改
     tmpTextView.backgroundColor = [UIColor greenColor];
     return tmpTextView;
 }

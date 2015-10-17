@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "LUHTextView.h"
 
-#define kTitleInputCellHeigntMin 44
+#define kTitleInputCellHeigntMin 44         //cell最小高度
+#define kTitleInputCellHorizontalPadding 4  //textView 到 Cell 左边的间距
+#define kTitleInputCellVerticalPadding 5    //textView 到 Cell 顶部的间距
+#define kTitleInputCellInternalHeigit 33    //textView 的高度
 
 @class TitleInputTableViewCell;
 @protocol TitleInputTableViewCellDelegate <NSObject>
