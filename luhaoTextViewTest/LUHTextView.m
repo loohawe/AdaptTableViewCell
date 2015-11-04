@@ -135,7 +135,7 @@
         int a = self.baseHeight/_oneLineHeight;
         CGFloat b = self.baseHeight - (_oneLineHeight*a);
         int count = _kLUHTextView_height_min/_oneLineHeight;
-        _kLUHTextView_height_min_format = _oneLineHeight*count + b;
+        _kLUHTextView_height_min_format = b == 0 ? 0 : _oneLineHeight*count + b;
     }
 }
 
